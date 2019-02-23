@@ -63,7 +63,54 @@ http://caibaojian.com/react/component-lifecycle.html
 ### learning-03
 主要是react的属性和事件
 
-##### 1.
+##### 1.State属性
+state对于模块来说属于自身属性
+初始化：this.state = {username:'zero'};
+初始化可以放置在构造函数constructor里
+修改state:this.setState({username:'zero'});
+state的作用域只属于当前的类，不污染其他的模块
+
+
+##### 2.Props属性
+props对于模块属于外来属性
+传递参数：<BodyIndex username="zero" />
+模块中接收参数： this.props.username
+
+ 
+##### 3.事件与数据的双向绑定
+事件绑定：注意ES6语法：可以在构造函数里绑定 this.updateHandler = this.updateHandler.bind(this);
+h或者调用时绑定： onClick={this.changeUserInfo.bind(this,66)}
+
+<input type="button" value="提交" onClick={this.changeUserInfo.bind(this,90)}>
+
+子页面向父页面传递参数的方法
+    在子页面中通过调用父页面传递过来的事件props进行组件间的参数传递
+    好好理解这里的onChange事件，为什么不用onBlur
+
+##### 4.可复用组件
+Prop验证 const propTypes = {id:PropTypes.number.isRequired,url:PropTypes.string}
+默认Prop值  const defaultProps = {text:'Hello World'};
+传递所有参数的快捷方式  <Component {...this.props} more="values" />
+
+
+##### 5.组件的Refs
+原始获取方法： var myDiv = document.getElementById("myDiv").findDOMNode(myDiv).style.color='green';
+
+方法二 refs
+    定义：<input ref ="myInput" />
+    获取：this.refs.myInput
+
+注意事项：
+    Refs是访问到组件内部DOM节点唯一可靠的方法
+    Refs会自动销毁对子组件的引用
+    不要在render或者render之前对Refs进行调用（因为组件还没加载好，调用就没有意义了）
+    不要滥用Refs
+
+##### 6.独立组件间共享Mixins
+
+
+
+
 
 
 
