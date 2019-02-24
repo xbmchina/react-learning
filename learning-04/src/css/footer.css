@@ -1,0 +1,15 @@
+.miniFooter{
+    background-color: #333333;
+    color: #ffff00;
+    padding-left: 20px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+  
+  .miniFooter h1{
+    font-size: 15px;
+  }
+  
+  .myStyle {
+      background-color: blue;
+  }
