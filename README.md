@@ -170,6 +170,8 @@ UI框架： https://ant.design/index-cn
 主要介绍react-router的页面跳转
 https://github.com/ReactTraining/react-router
 
+npm install react-router-dom --save-dev
+
 ##### 1.概念
 控制页面的层级关系
 单页面构建Router控制

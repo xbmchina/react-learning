@@ -3,8 +3,9 @@ var ReactDOM = require('react-dom');
 import ComponentHeader from './components/ComponentHeader';
 import ComponentFooter from './components/ComponentFooter';
 import BodyIndex from './components/BodyIndex';
+import BasicExample from './root'
 
-class Index extends React.Component {
+export default class Index extends React.Component {
   //组件即将加载
   componentWillMount() {
     //定义你的逻辑即可
@@ -37,6 +38,4 @@ class Index extends React.Component {
   }
 }
 
-
-ReactDOM.render(
-  <Index />, document.getElementById('app'));
+ReactDOM.render(<BasicExample/>,document.getElementById('app'))
