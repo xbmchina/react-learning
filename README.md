@@ -111,6 +111,134 @@ Prop验证 const propTypes = {id:PropTypes.number.isRequired,url:PropTypes.strin
 
 
 
+### learning-04
+主要关于css样式
+
+##### 1.内联样式
+CSS命名规范： dialog_confirm-button--highlight
+
+在render函数里定义
+const styleComponentHeader = {
+    header: {
+        backgroundColor: '#333333',
+        color: '#FFFFFF',
+        'padding-top': '12px',
+        'paddingBottom: '16px'
+    }
+};
+
+注意样式的驼峰写法
+style = {styleComponentHeader.header}
+
+文件中引用css的样式
+注意class需要更改成className
+确定是动画、伪类（hover）等不能使用
+
+
+##### 2.内联样式中的表达式
+paddingBottom：(this.state.minHeader)?"3px":"15px"
+注意好好理解这里的state引起样式的即时变化
+
+
+##### 3.CSS模块化
+原因：避免全局污染、命名混乱、依赖管理不彻底、无法共享变量、代码压缩不彻底
+
+npm install --save-dev style-loader css-loader 
+npm install --save-dev babel-plugin-react-html-attrs   为了使用原生的html属性名
+
+导入：var footerCss = require("../css/footer.css")
+使用：<footer class={footerCss.minFooter}>
+:local(.normal){color:green;}     局部
+:global(.btn){color:red;}         全局
+ 
+
+CSS模块化的优点
+    所有样式都是local的，解决了命名冲突和全局污染问题
+    class名生成规则配置灵活，可以此来压缩class名
+    只需引用组件的JS就能搞定组件所有的js和css
+    依然是css，几乎零学习成本
+
+
+jsx样式与css的互转
+工具：https://staxmanade.com/CssToReact/
+
+UI框架： https://ant.design/index-cn
+
+
+
+### learning-05
+主要介绍react-router的页面跳转
+https://github.com/ReactTraining/react-router
+
+##### 1.概念
+控制页面的层级关系
+单页面构建Router控制
+
+底层机制
+React： state/props -> Components ->UI
+Router: location ->Router -> UI
+
+
+##### 2.router传参
+定义： path="list/:id"
+使用： this.props.params.id 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
