@@ -1,18 +1,21 @@
-import * as types from '../../constants/types'
+import * as types from '../../constants/types';
 
-  const initState = {
-      comment:''
-  }
-  export function comments(state=initState, action) {
 
-      switch(action.type){
-        case types.ADD_COMMENT:
-          return {
-            ...state,
-            comment: state.comment
-          }
-        
-        default:
-          return state
-      }
+const initState = {
+  comment: 1
+}
+
+export function comments(state = initState, action) {
+
+  switch (action.type) {
+    case types.ADD_COMMENT:
+      console.log("reducer comments...."+action.payload.comment);
+      return {
+        ...state,
+        comment: action.payload.comment
+      };
+    default:
+      return state;
   }
+
+}

@@ -13,20 +13,14 @@ const initUserState = {
 
 }
 
-export function user(state = initUserState,action){
+export function user(state = 0,action){
 
     switch(action.type) {
         case types.LOGOIN_SUCCESS:
-            console.log("user......"+ action.payload.id);
-            return {
-                ...state,
-                userInfo: action.payload
-            };
+            console.log("user......"+ action.payload);
+            return state+10;
         case types.LOGOUT:
-            return {
-                ...state,
-                userInfo: ''
-            };
+            return state - 10;
         
         default:
             return state;

@@ -3,6 +3,7 @@ var ReactDOM = require('react-dom');
 import ComponentHeader from './components/ComponentHeader';
 import ComponentFooter from './components/ComponentFooter';
 import BodyIndex from './components/BodyIndex';
+import TestCom from './components/TestCom';
 // import fn from './index-demo.js';
 // fn()
 import { Provider } from 'react-redux'
@@ -18,6 +19,7 @@ class Index extends React.Component {
       <div>
         <ComponentHeader />
         <BodyIndex />
+        <TestCom />
         <ComponentFooter />
       </div>
     );
